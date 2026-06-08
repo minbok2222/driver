@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)file:///F:/download/JN-AI_%EC%B2%AD%EB%A0%B4%ED%80%B4%EC%A6%88_1%EC%9B%94%EA%B8%B0%EB%B3%B8%ED%8E%B8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JN-AI 청렴퀴즈 챌린지 - 1월 청렴 기본편</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:20px;}
+h1{margin-bottom:5px;}
+.card{border:1px solid #ddd;border-radius:10px;padding:15px;margin:15px 0;}
+button{padding:10px 20px;font-size:16px;cursor:pointer;}
+#result{margin-top:20px;font-size:20px;font-weight:bold;}
+</style>
+</head>
+<body>
+<h1>📢 오늘의 JN-AI 청렴 퀴즈</h1>
+<p><b>이번 달 청렴 퀴즈</b> (총 5문항)</p>
+
+<form id="quizForm">
+<div class="card">
+<p>1. 청렴의 의미로 가장 적절한 것은?</p>
+<label><input type="radio" name="q1" value="0"> 규정만 지키는 것</label><br>
+<label><input type="radio" name="q1" value="1"> 공정하고 투명하게 업무를 수행하는 것</label><br>
+<label><input type="radio" name="q1" value="0"> 업무를 빨리 처리하는 것</label><br>
+<label><input type="radio" name="q1" value="0"> 상사 지시에 무조건 따르는 것</label>
+</div>
+
+<div class="card">
+<p>2. 공직자가 지켜야 할 기본가치는?</p>
+<label><input type="radio" name="q2" value="1"> 공정성</label><br>
+<label><input type="radio" name="q2" value="0"> 특혜</label><br>
+<label><input type="radio" name="q2" value="0"> 편의제공</label><br>
+<label><input type="radio" name="q2" value="0"> 친분우선</label>
+</div>
+
+<div class="card">
+<p>3. 청렴문화 조성을 위해 필요한 것은?</p>
+<label><input type="radio" name="q3" value="1"> 소통</label><br>
+<label><input type="radio" name="q3" value="0"> 무관심</label><br>
+<label><input type="radio" name="q3" value="0"> 침묵</label><br>
+<label><input type="radio" name="q3" value="0"> 방관</label>
+</div>
+
+<div class="card">
+<p>4. 부당한 업무지시를 받았을 경우 가장 적절한 행동은?</p>
+<label><input type="radio" name="q4" value="0"> 무조건 수행</label><br>
+<label><input type="radio" name="q4" value="1"> 상담 및 신고</label><br>
+<label><input type="radio" name="q4" value="0"> 무시</label><br>
+<label><input type="radio" name="q4" value="0"> 동료에게 전가</label>
+</div>
+
+<div class="card">
+<p>5. 청렴은 특정 직원만 실천하면 된다.</p>
+<label><input type="radio" name="q5" value="0"> O</label><br>
+<label><input type="radio" name="q5" value="1"> X</label>
+</div>
+
+<button type="button" onclick="gradeQuiz()">결과 확인</button>
+</form>
+
+<div id="result">점수 : <b>0점</b><br>📚 청렴 교육 복습을 추천합니다.</div>
+
+<script>
+function gradeQuiz(){
+ let score=0;
+ for(let i=1;i<=5;i++){
+   const selected=document.querySelector('input[name="q'+i+'"]:checked');
+   if(selected){ score += Number(selected.value); }
+ }
+ const percent = score*20;
+ let msg="";
+ if(percent===100) msg="🏆 청렴 리더형! 만점입니다.";
+ else if(percent>=80) msg="👍 우수한 청렴 의식을 갖고 있습니다.";
+ else if(percent>=60) msg="🙂 청렴 기본 소양을 갖추고 있습니다.";
+ else msg="📚 청렴 교육 복습을 추천합니다.";
+ document.getElementById("result").innerHTML =
+   "점수 : <b>"+percent+"점</b><br>"+msg;
+}
+</script>
+
+
+</body></html>
